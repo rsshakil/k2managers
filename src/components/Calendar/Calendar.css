@@ -1,0 +1,76 @@
+.rdrDefinedRangesWrapper {
+    display: none;
+}
+/* .rdrCalendarWrapper {
+    width: 25rem;
+} */
+.rdrMonthAndYearPickers {
+    display: flex;
+}
+.rdrMonthPicker {
+    order: 2;
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: 243px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    transform: translateX(-89%) ;
+}
+.rdrDateDisplayWrapper {
+    cursor: default;
+}
+.rdrDateDisplay {
+    cursor: default
+}
+.rdrDateDisplayItem {
+    cursor: default;
+    border: none;
+}
+.rdrDateDisplayItem input {
+    cursor: default;
+}
+.rdrDateDisplayItemActive {
+    border: none
+}
+.rdp {
+    display: flex;
+    justify-content: center;
+    height: 346px;
+}
+.pa2 {
+    height: 32px;
+    font-size: 16px;
+}
+.rdp-table {
+    display: flex;
+    flex-direction: column;
+}
+.rdp-tbody {
+    height: 252px;
+}
+.rdp-head_row {
+    display: flex;
+    justify-content: space-around;
+}
+.rdp-tfoot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+.rdp-vhidden {
+    order: 2;
+}
+.rdp-dropdown_month {
+    order: 1;
+}
+.rdp-dropdown_year {
+    order: 0;
+}

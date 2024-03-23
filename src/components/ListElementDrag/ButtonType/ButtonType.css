@@ -1,0 +1,16 @@
+.dx-list:not(.dx-list-select-decorator-enabled) .dx-state-disabled.dx-list-item.dx-list-item-selected {
+    background-color: #fff;
+}
+
+.customSelectButton .dx-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    @apply text-blue-100;
+}
+.customSelectButtonInput input {
+    @apply text-blue-100 text-center
+}

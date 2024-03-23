@@ -1,0 +1,6 @@
+.dx-treelist-cell-expandable:has(.dx-treelist-icon-container .dx-treelist-empty-space:first-child:nth-last-child(4)) {
+    cursor: pointer;
+}
+.customGanttTitleColumn .dx-gantt-main-wrapper tr:nth-last-child(-n+5) .dx-treelist-text-content div[data-tooltip].dxc-tooltip::before {
+    top: -2em !important;
+}

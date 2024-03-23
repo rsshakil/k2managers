@@ -1,0 +1,497 @@
+import { useRecoilState } from "recoil";
+import SelectBox from "../../Form/FormInputs/SelectBox";
+import TextBox from "../../Form/FormInputs/TextBox";
+import InputContainer from "../../Wrapper/InputContainer";
+
+import { Form, Formik } from "formik";
+import React from "react";
+import ColorPickerWithRecent from "../../ColorPicker/ColorPickerWithRecent";
+import Note from "../../Form/FormInputs/Note";
+import InputBoxSeparator from '../../InputBoxSeparator/InputBoxSeparator';
+
+
+import {
+    borderAttributes, borderRadiousAttributes, borderStyles, fontSizeAttributes, fontWeightAttributes
+} from "../../../lib/tailwindClassAttributes";
+import { appDesignerState } from "../../../store/recoil/appDesignerState";
+
+
+const InputBirthdaySettingsForm = ({ formData: initialData, handleOnChange, handleOnChangeColor = () => { }, tailwindColorCodeKeys }) => {
+    const [recoilStateValue, setRecoilState] = useRecoilState(appDesignerState);
+    const { activeTab, activePageId, tabItems } = recoilStateValue;
+
+
+
+    return (
+
+        <Formik
+            validateOnChange={false}
+            validateOnBlur={false}
+            enableReinitialize={true}
+            initialValues={initialData}
+        >
+            <div className='relative w-full'>
+                <Form>
+                    <div>
+                        <InputContainer>
+                            <SelectBox
+                                label='ラベル文字サイズ'
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25'
+                                name='labelTextSize'
+                                onChange={(e) => handleOnChange(e, 1)}>
+                                {fontSizeAttributes.length > 0 &&
+                                    fontSizeAttributes.map((field, index) => (
+                                        <option
+                                            value={field.value}
+                                            key={field.value + "_" + index}>
+                                            {field.caption}
+                                        </option>
+                                    )
+                                    )}
+                            </SelectBox>
+                        </InputContainer>
+                        <InputContainer>
+                            <SelectBox
+                                label='ラベル文字太さ'
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25'
+                                name='labelFontWeight'
+                                onChange={(e) => handleOnChange(e, 1)}>
+                                {fontWeightAttributes.length > 0 &&
+                                    fontWeightAttributes.map((field, index) => (
+                                        <option
+                                            value={field.value}
+                                            key={field.value + "_" + index}>
+                                            {field.caption}
+                                        </option>
+                                    )
+                                    )}
+                            </SelectBox>
+                        </InputContainer>
+
+                        <div className="flex flex-col mb-4">
+                            <label htmlFor="headerAreaShadow" className="text-blue-100  text-xs">ラベル配色</label>
+                            <div className="flex justify-start">
+                                <ColorPickerWithRecent
+                                    labelClassName="text-[10px] text-blue-100"
+                                    setColorhandle={(_, name, colorCode) => handleOnChangeColor(name, colorCode, tailwindColorCodeKeys.textColor, [1, 2])}
+                                    inputBoxItem="labelTextColor" pickerLabel="文字色" isBackgroundColor="1"
+                                    isDefaultColor={initialData?.labelTextColor} />
+                            </div>
+                        </div>
+
+                        <InputContainer>
+                            <Note label="ラベルカスタムClass"
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25 !p-1'
+                                height='h-8'
+                                name='labelCustomClass'
+                                onBlur={(e) => handleOnChange(e, 1)}
+                                placeholder='カスタムClass'
+                            />
+                        </InputContainer>
+
+                        <InputBoxSeparator cProperty={`mt-8 mb-8`} />
+
+                        <InputContainer>
+                            <TextBox label="必須文言	"
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25'
+                                name='requiredCharacters'
+                                onBlur={(e) => handleOnChange(e, 4)}
+                                placeholder='必須文言'
+                                type="text" />
+                        </InputContainer>
+                        <InputContainer>
+                            <SelectBox
+                                label='必須文字サイズ'
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25'
+                                name='requiredTextSize'
+                                onChange={(e) => handleOnChange(e, 1)}>
+                                {fontSizeAttributes.length > 0 &&
+                                    fontSizeAttributes.map((field, index) => (
+                                        <option
+                                            value={field.value}
+                                            key={field.value + "_" + index}>
+                                            {field.caption}
+                                        </option>
+                                    )
+                                    )}
+                            </SelectBox>
+                        </InputContainer>
+                        <InputContainer>
+                            <SelectBox
+                                label='必須文字太さ'
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25'
+                                name='requiredFontWeight'
+                                onChange={(e) => handleOnChange(e, 1)}>
+                                {fontWeightAttributes.length > 0 &&
+                                    fontWeightAttributes.map((field, index) => (
+                                        <option
+                                            value={field.value}
+                                            key={field.value + "_" + index}>
+                                            {field.caption}
+                                        </option>
+                                    )
+                                    )}
+                            </SelectBox>
+                        </InputContainer>
+
+                        <div className="flex flex-col mb-4">
+                            <label htmlFor="headerAreaShadow" className="text-blue-100  text-xs">必須配色</label>
+                            <div className="flex justify-start space-x-4">
+                                <ColorPickerWithRecent
+                                    labelClassName="text-[10px] text-blue-100"
+                                    setColorhandle={(_, name, colorCode) => handleOnChangeColor(name, colorCode, tailwindColorCodeKeys.textColor, [1, 2])}
+                                    inputBoxItem="requiredTextColor" pickerLabel="文字色" isBackgroundColor="1"
+                                    isDefaultColor={initialData?.requiredTextColor} />
+                                <ColorPickerWithRecent
+                                    labelClassName="text-[10px] text-blue-100"
+                                    setColorhandle={(_, name, colorCode) => handleOnChangeColor(name, colorCode, tailwindColorCodeKeys.backgroundColor, [1, 2])}
+                                    inputBoxItem="requiredBackgroundColor" pickerLabel="背景色" isBackgroundColor="1"
+                                    isDefaultColor={initialData?.requiredBackgroundColor} />
+
+                            </div>
+                        </div>
+
+                        <InputContainer>
+                            <Note label="必須カスタムClass"
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25 !p-1'
+                                height='h-8'
+                                name='requiredCustomClass'
+                                onBlur={(e) => handleOnChange(e, 1)}
+                                // maxLength='32'
+                                placeholder='カスタムClass'
+                            />
+                        </InputContainer>
+
+                        <InputBoxSeparator cProperty={`mt-8 mb-8`} />
+
+
+
+
+                        <InputContainer>
+                            <SelectBox
+                                label={"入力エリア文字サイズ"}
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25'
+                                name='selectTextSize'
+                                onChange={(e) => handleOnChange(e, 1)}>
+                                {fontSizeAttributes.length > 0 &&
+                                    fontSizeAttributes.map((field, index) => (
+                                        <option
+                                            value={field.value}
+                                            key={field.value + "_" + index}>
+                                            {field.caption}
+                                        </option>
+                                    ))}
+                            </SelectBox>
+                        </InputContainer>
+                        <InputContainer>
+                            <SelectBox
+                                label={"入力エリア文字太さ"}
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25'
+                                name='selectTextWeight'
+                                onChange={(e) => handleOnChange(e, 1)}>
+                                {fontWeightAttributes.length > 0 &&
+                                    fontWeightAttributes.map((field, index) => (
+                                        <option
+                                            value={field.value}
+                                            key={field.value + "_" + index}>
+                                            {field.caption}
+                                        </option>
+                                    )
+                                    )}
+                            </SelectBox>
+                        </InputContainer>
+                        <InputContainer>
+                            <SelectBox
+                                label='入力エリア罫線'
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25'
+                                name='selectBorderWidth'
+                                onChange={(e) => handleOnChange(e, 1)}>
+                                {borderAttributes.length > 0 &&
+                                    borderAttributes.map((field, index) => (
+                                        <option
+                                            value={field.value}
+                                            key={field.value + "_" + index}>
+                                            {field.caption}
+                                        </option>
+                                    )
+                                    )}
+                            </SelectBox>
+                        </InputContainer>
+                        <InputContainer>
+                            <SelectBox
+                                label='セレクトエリア枠線種別'
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25'
+                                name='selectBorderStyle'
+                                onChange={(e) => handleOnChange(e, 1)}>
+                                {borderStyles.length > 0 &&
+                                    borderStyles.map((field, index) => (
+                                        <option
+                                            value={field.value}
+                                            key={field.value + "_" + index}>
+                                            {field.caption}
+                                        </option>
+                                    )
+                                    )}
+                            </SelectBox>
+                        </InputContainer>
+                        <InputContainer>
+                            <SelectBox
+                                label='入力エリア角丸サイズ'
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25'
+                                name='selectBorderRadius'
+                                onChange={(e) => handleOnChange(e, 1)}>
+                                {borderRadiousAttributes.length > 0 &&
+                                    borderRadiousAttributes.map((field, index) => (
+                                        <option
+                                            value={field.value}
+                                            key={field.value + "_" + index}>
+                                            {field.caption}
+                                        </option>
+                                    )
+                                    )}
+                            </SelectBox>
+                        </InputContainer>
+
+                        <div className="flex flex-col mb-4">
+
+                            <label htmlFor="headerAreaShadow"
+                                className="text-blue-100  text-xs">入力エリア配色</label>
+                            <div className="flex justify-start space-x-4">
+                                <ColorPickerWithRecent
+                                    labelClassName="text-[10px] text-blue-100"
+                                    setColorhandle={(_, name, colorCode) => handleOnChangeColor(name, colorCode, tailwindColorCodeKeys.textColor, [1, 2])}
+                                    inputBoxItem="selectTextColor" pickerLabel="選択文字色	"
+                                    isBackgroundColor="1"
+                                    isDefaultColor={initialData?.selectTextColor} />
+
+                                <ColorPickerWithRecent
+                                    labelClassName="text-[10px] text-blue-100"
+                                    setColorhandle={(_, name, colorCode) => handleOnChangeColor(name, colorCode, tailwindColorCodeKeys.backgroundColor, [1, 2])}
+                                    inputBoxItem="selectBackgroundColor" pickerLabel="選択背景色"
+                                    isBackgroundColor="1"
+                                    isDefaultColor={initialData?.selectBackgroundColor} />
+                                <ColorPickerWithRecent
+                                    labelClassName="text-[10px] text-blue-100"
+                                    setColorhandle={(_, name, colorCode) => handleOnChangeColor(name, colorCode, tailwindColorCodeKeys.borderColor, [1, 2])}
+                                    inputBoxItem="selectBorderColor" pickerLabel="枠線色" isBackgroundColor="1"
+                                    isDefaultColor={initialData?.selectBorderColor} />
+                            </div>
+                        </div>
+
+
+
+
+                        <InputBoxSeparator cProperty={`mt-8 mb-8`} />
+
+
+
+
+
+
+
+                        <InputContainer>
+                            <SelectBox
+                                label='月日表示文字サイズ'
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25'
+                                name='dayMonthTextSize'
+                                onChange={(e) => handleOnChange(e, 1)}>
+                                {fontSizeAttributes.length > 0 &&
+                                    fontSizeAttributes.map((field, index) => (
+                                        <option
+                                            value={field.value}
+                                            key={field.value + "_" + index}>
+                                            {field.caption}
+                                        </option>
+                                    ))}
+                            </SelectBox>
+                        </InputContainer>
+                        <InputContainer>
+                            <SelectBox
+                                label='月日表示文字太さ'
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25'
+                                name='dayMonthTextWeight'
+                                onChange={(e) => handleOnChange(e, 1)}>
+                                {fontWeightAttributes.length > 0 &&
+                                    fontWeightAttributes.map((field, index) => (
+                                        <option
+                                            value={field.value}
+                                            key={field.value + "_" + index}>
+                                            {field.caption}
+                                        </option>
+                                    )
+                                    )}
+                            </SelectBox>
+                        </InputContainer>
+
+                        <div className="flex flex-col mb-4">
+
+                            <label htmlFor="headerAreaShadow"
+                                className="text-blue-100  text-xs">月日配色</label>
+                            <div className="flex justify-start space-x-4">
+                                <ColorPickerWithRecent
+                                    labelClassName="text-[10px] text-blue-100"
+                                    setColorhandle={(_, name, colorCode) => handleOnChangeColor(name, colorCode, tailwindColorCodeKeys.textColor, [1, 2])}
+                                    inputBoxItem="dayMonthTextColor" pickerLabel="月日文字色"
+                                    isBackgroundColor="1"
+                                    isDefaultColor={initialData?.dayMonthTextColor} />
+
+
+                                <ColorPickerWithRecent
+                                    labelClassName="text-[10px] text-blue-100"
+                                    setColorhandle={(_, name, colorCode) => handleOnChangeColor(name, colorCode, tailwindColorCodeKeys.backgroundColor, [1, 2])}
+                                    inputBoxItem="dayMonthBackgroundColor" pickerLabel="月日背景色"
+                                    isBackgroundColor="1"
+                                    isDefaultColor={initialData?.dayMonthBackgroundColor} />
+                            </div>
+                        </div>
+
+                        <InputContainer>
+                            <Note label='月日表示カスタムClass'
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25 !p-1'
+                                height='h-8'
+                                name='dayMonthcustomClass'
+                                onBlur={(e) => handleOnChange(e, 1)}
+                                placeholder='カスタムClass'
+                            />
+                        </InputContainer>
+
+                        <InputBoxSeparator cProperty={`mt-8 mb-8`} />
+
+
+
+                        <InputContainer>
+                            <SelectBox
+                                label='入力エリア下エラーメッセージ文字サイズ'
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25'
+                                name='inputErrorTextSize'
+                                onChange={(e) => handleOnChange(e, 1)}>
+                                {fontSizeAttributes.length > 0 &&
+                                    fontSizeAttributes.map((field, index) => (
+                                        <option
+                                            value={field.value}
+                                            key={field.value + "_" + index}>
+                                            {field.caption}
+                                        </option>
+                                    )
+                                    )}
+                            </SelectBox>
+                        </InputContainer>
+                        <InputContainer>
+                            <SelectBox
+                                label='入力エリア下エラーメッセージ文字太さ'
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25'
+                                name='inputErrorTextWeight'
+                                onChange={(e) => handleOnChange(e, 1)}>
+                                {fontWeightAttributes.length > 0 &&
+                                    fontWeightAttributes.map((field, index) => (
+                                        <option
+                                            value={field.value}
+                                            key={field.value + "_" + index}>
+                                            {field.caption}
+                                        </option>
+                                    )
+                                    )}
+                            </SelectBox>
+                        </InputContainer>
+
+                        <div className="flex flex-col mb-4">
+                            <label htmlFor="headerAreaShadow" className="text-blue-100  text-xs">入力エリア下エラーメッセージ配色</label>
+                            <div className="flex justify-start space-x-4">
+                                <ColorPickerWithRecent
+                                    labelClassName="text-[10px] text-blue-100"
+                                    setColorhandle={(_, name, colorCode) => handleOnChangeColor(name, colorCode, tailwindColorCodeKeys.textColor, [1, 2])}
+                                    inputBoxItem="inputErrorTextColor" pickerLabel="エラーメッセージ文字色" isBackgroundColor="1"
+                                    isDefaultColor={initialData?.inputErrorTextColor} />
+                                <ColorPickerWithRecent
+                                    labelClassName="text-[10px] text-blue-100"
+                                    setColorhandle={(_, name, colorCode) => handleOnChangeColor(name, colorCode, tailwindColorCodeKeys.backgroundColor, [1, 2])}
+                                    inputBoxItem="inputErrorBackgroundColor" pickerLabel="エラーメッセージ背景色"
+                                    isBackgroundColor="1" isDefaultColor={initialData?.inputErrorBackgroundColor} />
+
+                            </div>
+                        </div>
+                        <InputContainer>
+                            <Note label="入力エリア下エラーメッセージカスタムClass"
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25 !p-1'
+                                height='h-8'
+                                name='inputErrorCustomClass'
+                                onBlur={(e) => handleOnChange(e, 1)}
+                                placeholder='カスタムClass'
+                            />
+                        </InputContainer>
+
+                        <InputBoxSeparator cProperty={`mt-8 mb-8`} />
+
+
+                        <InputContainer>
+                            <Note label="年WrapカスタムClass"
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25 !p-1'
+                                height='h-8'
+                                name='yearWrapCustomClass'
+                                onBlur={(e) => handleOnChange(e, 1)}
+                                placeholder='カスタムClass'
+                            />
+                        </InputContainer>
+
+
+                        <InputContainer>
+                            <Note label="月WrapカスタムClass"
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25 !p-1'
+                                height='h-8'
+                                name='monthWrapCustomClass'
+                                onBlur={(e) => handleOnChange(e, 1)}
+                                placeholder='カスタムClass'
+                            />
+                        </InputContainer>
+
+
+                        <InputContainer>
+                            <Note label="日WrapカスタムClass"
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25 !p-1'
+                                height='h-8'
+                                name='dayWrapCustomClass'
+                                onBlur={(e) => handleOnChange(e, 1)}
+                                placeholder='カスタムClass'
+                            />
+                        </InputContainer>
+
+
+                        <InputContainer className="!mb-0">
+                            <Note label="入力フォーム誕生日WrapカスタムClass"
+                                labelClassName='text-blue-100 text-xs'
+                                inputClassName='bg-blue-25 !p-1'
+                                height='h-8'
+                                name='birthdayWrapCustomClass'
+                                onBlur={(e) => handleOnChange(e, 1)}
+                                placeholder='カスタムClass'
+                            />
+                        </InputContainer>
+
+                    </div>
+                </Form>
+            </div>
+        </Formik>
+    );
+}
+export default InputBirthdaySettingsForm

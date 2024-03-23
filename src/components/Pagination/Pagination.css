@@ -1,0 +1,26 @@
+.bgActive {
+    background-color: #145c8f !important;
+}
+.bgActive:hover{
+    background-color: #8AADC6 !important;
+}
+.pageBorder {
+    border: 0.5px solid #145c8f;
+}
+.activeBorder {
+    border: 0.5px solid black;
+}
+.textColor {
+    color: #145c8f;
+}
+.marginBreak {
+    margin-left: -6px;
+    margin-right: -4px;
+}
+
+.position-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

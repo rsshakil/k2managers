@@ -1,0 +1,56 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifya597cc14f4844-staging-80409-authRole",
+      "UnauthRoleArn": "arn:aws:iam::134712758746:role/amplify-amplifya597cc14f4844-staging-80409-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::134712758746:role/amplify-amplifya597cc14f4844-staging-80409-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-amplifya597cc14f4844-staging-80409-deployment",
+      "UnauthRoleName": "amplify-amplifya597cc14f4844-staging-80409-unauthRole",
+      "StackName": "amplify-amplifya597cc14f4844-staging-80409",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:134712758746:stack/amplify-amplifya597cc14f4844-staging-80409/f4067fe0-cc75-11ed-b026-0a49bce6c38f",
+      "AmplifyAppId": "d13cg6c9szeihn"
+    },
+    "categories": {
+      "api": {
+        "k2manager": {}
+      }
+    }
+  },
+  "develop": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-k2manager-develop-143847-authRole",
+      "UnauthRoleArn": "arn:aws:iam::134712758746:role/amplify-k2manager-develop-143847-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::134712758746:role/amplify-k2manager-develop-143847-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-k2manager-develop-143847-deployment",
+      "UnauthRoleName": "amplify-k2manager-develop-143847-unauthRole",
+      "StackName": "amplify-k2manager-develop-143847",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:134712758746:stack/amplify-k2manager-develop-143847/cd3fcba0-cc7a-11ed-9f8b-06bf2b6b29c7",
+      "AmplifyAppId": "d13cg6c9szeihn"
+    },
+    "categories": {
+      "api": {
+        "k2manager": {}
+      }
+    }
+  },
+  "product": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-k2manager-product-145044-authRole",
+      "UnauthRoleArn": "arn:aws:iam::134712758746:role/amplify-k2manager-product-145044-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::134712758746:role/amplify-k2manager-product-145044-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-k2manager-product-145044-deployment",
+      "UnauthRoleName": "amplify-k2manager-product-145044-unauthRole",
+      "StackName": "amplify-k2manager-product-145044",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:134712758746:stack/amplify-k2manager-product-145044/793634c0-cc7c-11ed-9abb-067a2f72d1e9",
+      "AmplifyAppId": "d13cg6c9szeihn"
+    },
+    "categories": {
+      "api": {
+        "k2manager": {}
+      }
+    }
+  }
+}

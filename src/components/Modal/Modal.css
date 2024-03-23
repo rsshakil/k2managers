@@ -1,0 +1,66 @@
+.no-scroll{
+    overflow-y: hidden; 
+    overflow-x: hidden;
+}
+.modal-overlay {
+    /*display: block;*/
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0 ,0, 0.75);
+    z-index: 1000;
+    vertical-align: middle;
+}
+.lock-scroll{
+    overflow: hidden
+}
+.content-m {
+    @apply relative flex justify-center items-center overflow-x-auto min-h-full overflow-y-auto min-w-[1440px];
+}
+.modal-content {
+    width: 1440px;
+    padding: 2rem;
+    @apply mx-auto my-auto;
+}
+.modal-header {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    line-height: 2rem;
+    vertical-align: middle;
+}
+
+.content-1440 {
+    width: 1440px;
+    padding: 2rem;
+    @apply mx-auto border;
+}
+.modal-body {
+    height: calc(100vh - 336px);
+    @apply overflow-y-auto;
+}
+.modal4-body {
+    flex-wrap: wrap;
+}
+.modal-height {
+    min-height: calc(100vh - 305px);
+}
+.modal1440-body{
+    height: 100vh;
+    width: 1440px;
+    padding: 4rem 4rem 2rem 4rem;
+    position: relative;
+    bottom:0;
+    flex-wrap: wrap;
+}
+
+.content-1440_2 {
+    width: 1440px;
+    padding: 2rem;
+    background-color: white;
+    border-width: 1px;
+    border-color: #145c8f;
+    color: black;
+}

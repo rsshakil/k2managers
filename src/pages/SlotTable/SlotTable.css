@@ -1,0 +1,41 @@
+.columnHeader {
+    position: relative;
+    overflow: visible !important; 
+}
+.dx-datagrid {
+    /*width: 1420px;*/
+}
+.dx-datagrid-borders > .dx-datagrid-filter-panel, .dx-datagrid-borders > .dx-datagrid-headers {
+    @apply text-blue-100
+}
+.dx-datagrid-content .dx-datagrid-table .dx-row  td:first-child {
+    @apply text-blue-100
+}
+.dx-datagrid .dx-row-alt > td, .dx-datagrid .dx-row-alt > tr > td {
+    border-top: unset !important;
+    border-bottom: unset !important;
+    background-color: unset!important;
+}
+.dx-datagrid .dx-column-lines > td {
+    border-left: 1px solid #145c8f;
+    border-right: 1px solid #145c8f;
+}
+.dx-datagrid-borders > .dx-datagrid-rowsview{
+    @apply border-[1px] border-cDarkBlue
+}
+.dx-datagrid-borders > .dx-datagrid-headers{
+    @apply border border-cDarkBlue
+}
+.dx-datagrid-headers{
+    border-bottom: unset !important;
+}
+.dx-datagrid-headers .dx-datagrid-table .dx-row > td{
+    border-bottom: 1px solid #145c8f;
+}
+.dx-datagrid-rowsview .dx-row>td, .dx-datagrid-rowsview .dx-row>tr>td{
+    @apply bg-codd hover:bg-coddhover
+}
+.dx-datagrid-action, .dx-datagrid-drag-action{
+    cursor: ew-resize !important;
+}
+

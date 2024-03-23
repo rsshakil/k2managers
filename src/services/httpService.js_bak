@@ -1,0 +1,35 @@
+import axios from "axios";
+import { baseURL, environment } from "../restapi/queries";
+
+//Create axios instance
+const instance = axios.create({
+    baseURL: baseURL,
+    headers: {
+        "Content-Type": "application/json",
+    },
+});
+
+
+//Set token as Authorization in header in every request
+instance.interceptors.request.use(
+    (config) => {
+        config.headers["Authorization"] = `Bearer ${localStorage.getItem("token")}`;
+        return config;
+    },
+    (error) => {
+        return Promise.reject(error);
+    }
+);
+
+//Handle error commonly
+
+
+
+
+// eslint-disable-next-line
+export default {
+    get: instance.get,
+    post: instance.post,
+    put: instance.put,
+    delete: instance.delete,
+};

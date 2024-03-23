@@ -1,0 +1,23 @@
+
+.icon-style {
+    @apply group-hover:text-gray-700 focus:text-gray-200 text-gray-600 p-2 flex-1;
+}
+.li-style {
+    border-left: 6px solid #94d2af;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    @apply h-8 hover:bg-green-150 border-l-green-200  border-transparent truncate;
+}
+.ul-style {
+   /* @apply leading-8 shadow-xl text-blue-100 z-[55] fixed invisible w-[192px] overscroll-auto overlay overflow-y-visible right-0 group-hover:visible bg-green-100; */
+   @apply leading-8 shadow-xl text-blue-100 z-[55] fixed invisible w-[192px] overscroll-auto overflow-y-visible right-0 group-hover:visible bg-green-100;
+}
+/**
+ * Height at which 3 projects are displayed
+*/
+.ul-project {
+    /* height: 6rem; */
+}
+.ul-project::-webkit-scrollbar {
+    width: 0.5rem;
+}

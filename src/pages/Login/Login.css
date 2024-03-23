@@ -1,0 +1,27 @@
+.login-content {
+    width: 960px;
+    padding: 4rem 4rem 2rem 4rem;
+    @apply  bg-white;
+}
+.margin {
+    margin-bottom: 4rem;
+}
+.input {
+    height: 32px;
+    margin-bottom: 32px;
+    background-color: #E8EDF2;
+    padding: 8px;
+    font-weight: normal;
+    @apply focus:outline-none;
+}
+.border-all {
+    border: 1px solid #145C8F;
+}
+.form-error {
+    color: #FF4B00;
+    @apply flex flex-col text-right font-normal;
+}
+.eyeStyle {
+    margin-left: -28px;
+    @apply flex mt-[8px] mr-[8px] h-[1rem] align-middle w-[1rem] text-black cursor-pointer;
+}

@@ -1,0 +1,720 @@
+@import url('./encoderSVG.css');
+@import url('./dxStyle.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ROOT START */
+:root {
+    --selectPlaceholderColor: '#000000';
+    --selectOptionColor: '#000000';
+}
+
+body {
+    font-size: 16px;
+    color: #000000;
+    background-color: #f4f5f7;
+    font-family: 'Yu Gothic Medium', '游ゴシック Medium', 'YuGothic', '游ゴシック体', 'Arial', 'Noto Sans CJK',
+        'ヒラギノ角ゴ ProN', sans-serif;
+    overscroll-behavior: none !important;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.scroll-bar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+body::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+::-webkit-scrollbar-corner {
+    opacity: 0;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(50, 50, 50, 0.5);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1px;
+    border: 0px solid transparent;
+    background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:vertical {
+    border-left: 8px solid transparent;
+}
+::-webkit-scrollbar-thumb:horizontal {
+    border-top: 8px solid transparent;
+}
+
+::-webkit-scrollbar {
+    width: 14px !important;
+    height: 14px !important;
+}
+::-webkit-scrollbar-thumb:hover {
+    border: 0;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* ROOT END */
+
+label {
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+/*  blink the unsaved table cell  */
+
+.blink-me {
+    animation: blinker 1s ease-in-out infinite;
+}
+@keyframes blinker {
+    0%,
+    50% {
+        opacity: 0;
+    }
+    51%,
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Hide password reveal button in MS Edge */
+::-ms-reveal {
+    display: none;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-repeat: no-repeat;
+    background-position-x: 99.4%;
+    background-position-y: 9px;
+}
+.select-icon {
+    background-image: url(/src/img/Polygon9.svg);
+    padding-right: 18px;
+}
+.select-icon2 {
+    background-image: url(/src/img/accordionSelect.svg);
+    padding-right: 18px;
+}
+.select-icon3 {
+    background: url(/src/img/Polygon9.svg) no-repeat 99.4% 50% !important;
+}
+
+/* Hide browser default select icon */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+
+/* SELECT BOX PLACEHOLDER START */
+/* .customPlaceHolder option { color: var(--selectOptionColor); }
+ .customPlaceHolder option:first-child {
+     color : var(--selectPlaceholderColor)
+}*/
+/* SELECT BOX PLACEHOLDER END */
+
+/* all button letter-spacing included */
+button {
+    letter-spacing: 4px;
+}
+/* table tr th:last-child {
+    border-right: 0;
+} */
+/* Group utilities START */
+@layer components {
+    .content {
+        height: calc(100vh - 38px);
+        position: relative;
+        top: 0;
+        flex-wrap: wrap;
+        @apply relative flex justify-center items-center overflow-x-auto;
+    }
+    .calendar-border {
+        @apply border-b border-cLightBlue;
+    }
+    /* ---------------- For TABLE START ---------------- */
+    .filter-search {
+        @apply w-[9.25rem] pt-px pb-0.5 pl-2 outline-none bg-transparent border-b border-cLightBlue;
+    }
+    .calendar-input {
+        @apply w-full pt-px pb-0.5 pl-2 outline-none bg-transparent;
+    }
+    .table-wrapper {
+        @apply border-2 border-cDarkBlue bg-white;
+    }
+    .tbody-vertical-scroll {
+        @apply block h-[calc(100vh_-_182px)] overlay;
+    }
+    .tbody-height206p {
+        @apply h-[calc(100vh_-_206px)];
+    }
+
+    /* {this is added to enable scroll height-width} */
+    .tbody-vertical-scroll::-webkit-scrollbar {
+        @apply w-[6px] h-[6px];
+    }
+    .row-display {
+        @apply table w-full;
+    }
+    .table-row-bg {
+        @apply font-normal odd:bg-codd even:bg-ceven hover:odd:bg-coddhover hover:even:bg-cevenhover;
+    }
+    .table-row-bg-custom {
+        @apply font-normal odd:bg-ceven even:bg-codd hover:odd:bg-cevenhover hover:even:bg-coddhover;
+    }
+    .right-border {
+        @apply border-r border-cCellBorder whitespace-nowrap;
+    }
+    .cell-text-link {
+        @apply underline text-cTextLink cursor-pointer underline-offset-2;
+    }
+    .ellipsis {
+        @apply overflow-hidden text-ellipsis whitespace-nowrap;
+    }
+    /* ---------------- For TABLE END ---------------- */
+
+    /* ---------------- Custom Date Picker input type date START ---------------- */
+    /* Click anywhere date picker open*/
+    .custom-date-picker {
+        @apply relative;
+    }
+    .custom-date-picker::-webkit-calendar-picker-indicator {
+        @apply bg-right bg-auto cursor-pointer absolute bottom-0 left-0 right-1 top-1 w-auto;
+    }
+    /* Placeholder for input type date */
+    .custom-date-picker::before {
+        @apply content-[attr(data-placeholder)] text-blue-50 w-full;
+    }
+    /* 
+     * hide our custom/fake placeholder text when in focus to show the default
+     * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
+     */
+    .custom-date-picker:focus::before,
+    .custom-date-picker:valid::before {
+        @apply hidden;
+    }
+    /* ---------------- Custom Date Picker input type date END ---------------- */
+
+    /* ---------------- Custom number input type  for currency symbol starts ---------------- */
+    .currency-symbol {
+        position: relative;
+    }
+    .currency-symbol:after {
+        position: absolute;
+        /* top: 28px;*/
+        margin-top: 4px;
+        content: '¥';
+        left: 5px;
+    }
+
+    input[type='number']::-webkit-outer-spin-button,
+    input[type='number']::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    /* ---------------- Custom number input type END ---------------- */
+
+    /* ---------------- Toggle lock start ----------------- */
+    .text-Position {
+        @apply w-2/4 
+            absolute top-0 bottom-0 
+            flex justify-center 
+            tracking-[4px] items-center font-bold;
+    }
+    .centerPlace {
+        @apply absolute top-1/2 left-1/2;
+        transform: translate(-50%, -50%);
+    }
+    .switchWrapper {
+        @apply block w-full ml-0 -mt-[23px];
+    }
+    .switchDisplay {
+        @apply w-full h-8 
+            relative cursor-pointer 
+          text-white;
+    }
+    .switchStatus {
+        @apply p-0 m-0 text-xs font-normal text-white;
+    }
+    .switchBall {
+        height: -webkit-fill-available;
+        background: rgb(241, 241, 241);
+        background: linear-gradient(
+            180deg,
+            rgba(241, 241, 241, 1) 0%,
+            rgba(207, 207, 207, 1) 25%,
+            rgba(180, 180, 180, 1) 50%,
+            rgba(176, 176, 176, 1) 75%,
+            rgba(170, 170, 170, 1) 100%
+        );
+        @apply w-1/2 absolute top-0 left-0 z-20 text-black;
+        transition: 0.4s linear;
+    }
+    .switchBall:before {
+        content: '||||';
+        @apply w-full text-Position;
+    }
+    .switchInput {
+        display: inline-grid;
+        opacity: 0;
+    }
+    /* Set default background-color and content attr START*/
+    .switchInput:checked + .switchDisplay {
+        @apply bg-orange-300;
+    }
+    .switchInput:not(:checked) + .switchDisplay {
+        @apply bg-green-250;
+    }
+    .switchInput:not(:checked) + .switchDisplay::before {
+        content: attr(before);
+        @apply text-Position;
+    }
+    .switchInput:checked + .switchDisplay::before {
+        content: attr(after);
+        @apply text-Position left-2/4;
+    }
+    /* Set default background-color and content attr END*/
+    /* Set on Toggle bg-color and content attr START */
+    .switchInput:checked + .switchDisplay::after {
+        content: attr(before);
+        @apply text-Position bg-green-250;
+    }
+    .switchInput:not(:checked) + .switchDisplay::after {
+        content: attr(after);
+        @apply text-Position left-2/4 bg-orange-300;
+    }
+    /* Set on Toggle bg-color and content attr END */
+    .switchInput + .switchDisplay {
+        @apply border border-solid border-blue-100;
+    }
+    .switchInput:checked + .switchDisplay > .switchBall {
+        left: 50%;
+        @apply border-r-0 border-l border-solid border-blue-100;
+    }
+    .switchInput:not(:checked) + .switchDisplay > .switchBall {
+        @apply border-l-0 border-r border-solid border-blue-100;
+    }
+    .switchDisplay:hover {
+        @apply outline-1 outline outline-blue-100;
+    }
+    .switchDisplay:focus,
+    .switchDisplay:active {
+        @apply outline-2 outline outline-blue-100 outline-offset-2;
+    }
+    .switchInput:focus + .switchDisplay,
+    .switchDisplay:active + .switchDisplay {
+        @apply outline-2 outline outline-blue-100 outline-offset-2;
+    }
+    .checkbox-c {
+        height: 24px;
+        width: 24px;
+        vertical-align: middle;
+        cursor: pointer;
+        border: 1px solid #000000;
+    }
+    .checkbox-c:checked ~ .check-1 {
+        @apply text-opacity-100;
+    }
+    /* ------------Toggle lock end----------------- */
+    .grIconColor path {
+        stroke: #145c8f;
+    }
+}
+
+.dialog[open]:not(:focus-within) {
+    background-color: rgb(0, 0, 0, 0.8);
+    transition: background-color 0.01s;
+}
+
+.bg-contain {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.img-center {
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+}
+/* Group utilities END */
+
+@layer utilities {
+    .overlay {
+        overflow: overlay;
+    }
+    .border-spacing-0 {
+        border-spacing: 0;
+    }
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    input[type='number'] {
+        -moz-appearance: textfield;
+        appearance: textfield;
+        margin: 0;
+    }
+    .icon-group-border {
+        border: 2px solid #145c8f;
+    }
+}
+
+.modal_overlay {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #00000033;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 40;
+    cursor: auto;
+}
+
+/* haga debug */
+s .row_fontcolor_red {
+    color: red;
+}
+.row_fontcolor_orange {
+    color: orange;
+}
+.row_fontcolor_yellow {
+    color: yellow;
+}
+.row_fontcolor_blue {
+    color: blue;
+}
+.row_fontcolor_purple {
+    color: purple;
+}
+.row_fontcolor_gray {
+    color: gray;
+}
+.row_fontcolor_pink {
+    color: pink;
+}
+.row_fontcolor_green {
+    color: green;
+}
+.row_fontcolor_navy {
+    color: navy;
+}
+.row_fontcolor_olive {
+    color: olive;
+}
+
+.dx-freespace-row {
+    display: none;
+}
+
+/* hasanul added start*/
+.custom-treelist .dx-treelist-container {
+    height: 100% !important;
+}
+.custom-treelist .dx-treelist-container .dx-treelist-rowsview {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.custom-treelist .dx-command-drag {
+    cursor: ns-resize !important;
+}
+
+.custom-treelist .dx-treelist-container .dx-treelist-rowsview table tr:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(94 142 178 / var(--tw-bg-opacity));
+
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.custom-treelist .dx-command-edit {
+    min-width: 80px !important;
+    width: 80px !important;
+}
+
+.free-page-tab-content {
+    max-height: calc(100vh - 198px);
+}
+
+.common-page-tab-content {
+    max-height: calc(100vh - 130px);
+}
+
+.setting-page-tab-content {
+    max-height: calc(100vh - 130px);
+}
+
+.block-content {
+    max-height: 100%;
+}
+
+.custom-treelist .dx-treelist-container .dx-empty {
+    --tw-bg-opacity: 1;
+    background-color: rgb(232 237 242 / var(--tw-bg-opacity));
+    height: 30px;
+}
+.dx-icon-home-light {
+    color: #c8c8cb !important;
+}
+.tab-active {
+    --tw-bg-opacity: 1;
+    background-color: rgb(187 207 223 / var(--tw-bg-opacity));
+}
+.error {
+    border: 1px solid red;
+}
+
+.item-management-treeview {
+    cursor: default !important;
+}
+
+.item-management-treeview .dx-treeview-item {
+    cursor: s-resize !important;
+}
+
+.item-management-treeview .cursor-ns-resize {
+    cursor: s-resize !important;
+}
+
+.item-management-treeview .dx-treeview-toggle-item-visibility {
+    display: none;
+}
+
+.icons {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-auto-columns: -webkit-max-content;
+    grid-auto-columns: max-content;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    text-align: center;
+}
+
+.icons .item {
+    outline: none;
+}
+
+.icons .icon-picker-item {
+    outline: none;
+}
+
+.icons .icon-picker-item .icon-picker-icon {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+    border: 2px solid transparent;
+    font-size: 1.6em;
+}
+
+.icons .item .icon {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+    border: 2px solid transparent;
+    font-size: 1.6em;
+}
+
+.icons .name {
+    margin-top: 0.5rem;
+    font-size: 0.6em;
+    overflow: hidden;
+    -webkit-user-select: all;
+    user-select: all;
+}
+
+.icons .item .icon {
+    pointer-events: none;
+}
+.icons .item .icon svg {
+    pointer-events: none;
+}
+.icons .item .icon svg path {
+    pointer-events: none;
+}
+
+.customIconsBox .item {
+    outline: none;
+}
+
+.customIconsBox .icon-picker-item {
+    outline: none;
+}
+
+.customIconsBox .icon-picker-item .icon-picker-icon {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+    border: 2px solid transparent;
+    font-size: 1.6em;
+}
+
+.customIconsBox .item .icon {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+    border: 2px solid transparent;
+    font-size: 1.6em;
+}
+
+.customIconsBox .name {
+    margin-top: 0.5rem;
+    font-size: 0.6em;
+    overflow: hidden;
+    -webkit-user-select: all;
+    user-select: all;
+}
+
+.customIconsBox .item .icon {
+    pointer-events: none;
+}
+.customIconsBox .item .icon svg {
+    pointer-events: none;
+}
+.customIconsBox .item .icon svg path {
+    pointer-events: none;
+}
+
+.icon-container {
+    position: relative;
+}
+
+.top-icon {
+    position: absolute;
+    left: 0;
+    width: max-content;
+    height: fit-content;
+    right: 0;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/* ******************Hasanul added end************************ */
+
+.app-design-color-picker {
+    @apply space-x-4;
+}
+
+.app-design-color-picker .items-center span {
+    --tw-text-opacity: 1;
+    color: rgb(20 92 143 / var(--tw-text-opacity));
+    font-size: 10px;
+    line-height: 1rem;
+}
+/* custom shadow for tab components*/
+.custom-shadow {
+    box-shadow: 0 0 8px -16px rgb(0 0 0 / 10%), 7px -1px 4px -4px rgb(0 0 0 / 50%);
+}
+.custom-shadow2 {
+    box-shadow: -2px -20px 11px -28px rgb(0 0 0 / 10%), -1px 39px 4px 4px rgb(0 0 0 / 50%);
+}
+.custom-shadow-setting-page {
+    box-shadow: -2px -20px 11px -28px rgb(0 0 0 / 10%), 0px 8px 6px 3px rgb(0 0 0 / 50%);
+}
+/* Calendar selected date background color blue set */
+button.rdp-day_selected {
+    background-color: #0000ff;
+}
+
+/*  will be deleted later */
+.dx-sortable-placeholder {
+    border: 4px solid #5e8eb2 !important;
+    z-index: 9999 !important;
+}
+
+/* TOOLTIPS START */
+.tooltip-arrow2.visible {
+    display: block;
+}
+.tooltip-arrow3.visible {
+    display: block;
+}
+
+.tooltip-arrow3 {
+    position: absolute;
+    top: -10px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.7) transparent;
+    display: none;
+    
+}
+
+.tooltip-arrow2 {
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.7) transparent;
+    display: none;
+    bottom: -10px !important;
+    transform: rotate(180deg);
+   
+}
+
+/* TOOLTIPS END */
+
+.search_date_field_dev .dx-placeholder::before {
+    padding: 0;
+    --tw-text-opacity: 1;
+    color: rgb(138 173 198 / var(--tw-text-opacity));
+}
+.search_date_field_dev input {
+    padding-top: 0;
+    padding-bottom: 0;
+    min-height: 24px;
+    --tw-text-opacity: 1;
+    color: rgb(138 173 198 / var(--tw-text-opacity));
+}
+
+.versions {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 8px;
+    font-size: x-small;
+}
+.search_date_field_dev .dx-dropdowneditor-icon,
+.search_date_field_dev .dx-show-clear-button .dx-icon-clear,
+.devExtreameDateTimePicker .dx-dropdowneditor-icon,
+.devExtreameDateTimePicker .dx-show-clear-button .dx-icon-clear {
+    color: rgb(138 173 198 / var(--tw-text-opacity));
+}
+.dx-popup-bottom.dx-toolbar .dx-toolbar-items-container .dx-toolbar-after {
+    direction: rtl;
+}

@@ -1,0 +1,37 @@
+{
+    "cluster": "k2manager",
+    "count": 1,
+    "enableECSManagedTags": true,
+    "enableExecuteCommand": true,
+    "launchType": "FARGATE",
+    "networkConfiguration": {
+        "awsvpcConfiguration": {
+            "subnets": [
+                "subnet-0bbc611a4da79488d",
+                "subnet-0681427038500c119",
+                "subnet-07de2b352770d90ae"
+            ],
+            "securityGroups": [
+                "sg-092291d2733a1e699"
+            ],
+            "assignPublicIp": "ENABLED"
+        }
+    },
+    "overrides": {
+        "containerOverrides": [
+            {
+                "name": "k2manager-arm",
+                "command": [
+                    "/bin/bash", "-c", "cd k2manager && git pull && git checkout develop && git pull && yarn install && yarn build && aws s3 sync build s3://manager-develop-scft-reservation-jp"
+                ],
+                "memoryReservation": 4096
+            }
+        ],
+        "cpu": "4096",
+        "executionRoleArn": "arn:aws:iam::134712758746:role/ecsTaskExecutionRole",
+        "memory": "16384",
+        "taskRoleArn": "arn:aws:iam::134712758746:role/ecsTaskRole"
+    },
+    "platformVersion": "LATEST",
+    "taskDefinition": "k2manager-arm"
+}

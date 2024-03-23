@@ -1,0 +1,16 @@
+.menu{
+    min-width: 256px;
+    color: #145c8f;
+    background-color: #e4f4eb;
+    z-index: 10;
+}
+.cmt {
+    height: 32px;
+}
+.menuItemList {
+    padding-left: 8px;
+}
+.menuItemList:hover{
+    cursor: pointer;
+    background-color: #e4efe9;
+}

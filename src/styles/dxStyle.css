@@ -1,0 +1,633 @@
+/* ------------ Gantt Chart START -------------- */
+/* ------------ BUTTON START -------------- */
+
+.dx-button-has-icon .dx-button-content {
+  padding: 0;
+}
+/* ------------ BUTTON END -------------- */
+/* ------------ ContextMenu START -------------- */
+.dx-context-menu .dx-submenu {
+  background-color: #e4f4eb;
+}
+.dx-context-menu .dx-menu-items-container {
+  padding: 0;
+}
+.dx-menu-base .dx-menu-item-content .dx-menu-item-text {
+  color: #145c8f;
+}
+.dx-context-menu .dx-submenu .dx-menu-item-wrapper:hover {
+  cursor: pointer;
+  background-color: #e4efe9;
+}
+.contextMenu-itemList:hover {
+  cursor: pointer;
+  background-color: #e4efe9;
+}
+/* ------------ ContextMenu END -------------- */
+/* ------------ StripLine START -------------- */
+.dx-gantt .dx-gantt-tm.current-time {
+  z-index: 10;
+  border-left: 1px solid red;
+}
+
+/* ------------ StripLine END -------------- */
+.dx-gantt .dx-gantt-si {
+  width: 40px !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+.dx-treelist-headers {
+  margin-top: -.5px !important;
+  border: unset !important;
+  @apply text-blue-100;
+}
+.dx-treelist-container{
+  @apply text-blue-100 ;
+}
+
+.dx-button-mode-contained.dx-buttongroup-first-item.dx-button{
+  display: none;
+}
+.dx-button-mode-contained.dx-buttongroup-last-item.dx-button{
+  display: none;
+}
+.dx-buttongroup-item.dx-button.dx-button-mode-contained:not(.dx-item-selected){
+  background-color: transparent;
+  color: #ffffff;
+  border: 0px;
+}
+#container {
+  justify-content: space-between;
+  padding-top: 0;
+  display: grid; 
+  /* グリッドレイアウト */
+  /*grid-template-columns: 240px 240px 240px 240px;*/
+  grid-template-columns: repeat(auto-fill, 344px);
+  grid-template-rows: 182px 182px 182px 182px;
+ /* gap: 0 64px;*/
+}
+.scheduler-16 {
+  @apply px-8
+}
+.scheduler-16 .dx-scheduler-cell-sizes-vertical {  
+  height: 24px;  
+}
+.scheduler-16 .dx-widget.dx-button.dx-button-mode-contained.dx-button-default.dx-scheduler-appointment-collector.dx-scheduler-appointment-collector-compact {
+  background-color: #145c8f88;
+  color: white !important;
+  position: absolute !important;
+  box-shadow: unset !important;
+  z-index: -1;
+  width: 34px !important;
+  height: 24px !important;
+  margin-top: -8px !important;
+  margin-left: -3px !important;
+  vertical-align: middle;
+
+}
+.scheduler-16 .dx-widget.dx-button.dx-button-mode-contained.dx-button-default.dx-scheduler-appointment-collector.dx-scheduler-appointment-collector-compact:hover{
+  /*background-color: #19a75d !important;*/
+  @apply bg-blue-100
+}
+.dx-scheduler-appointment-collector.dx-button.dx-button-default, .dx-scheduler-appointment-collector.dx-state-hover::before {
+  border-radius: 0px;
+}
+.dx-scheduler-work-space-month
+  .dx-scheduler-date-table-scrollable
+  .dx-scrollable-content {
+  min-height: 100px !important;
+}
+.dx-scheduler-adaptive .dx-scheduler-appointment-collector .dx-button-content span:last-child, .dx-scheduler-adaptive .dx-scheduler-appointment-collector .dx-scheduler-appointment-collector-content span:last-child {
+  display: none !important;
+}
+.scheduler-16 td.dx-scheduler-cell-sizes-horizontal.dx-scheduler-cell-sizes-vertical.dx-scheduler-date-table-cell {
+  border: none !important;
+  @apply hover:bg-green-100
+}
+.dx-scheduler-work-space-month .dx-scheduler-date-table-cell{
+  vertical-align: middle !important;
+}
+.scheduler-16 .dx-scheduler-all-day-table-cell.dx-state-focused, .dx-scheduler-date-table-cell.dx-state-focused {
+  background-color: unset;
+  @apply hover:bg-none border-none
+}
+.scheduler-16 .dx-scheduler-date-table-cell-text{
+    @apply text-blue-100
+}
+@media only screen and (max-width: 370px) {
+  .dx-popup:not(.dx-scheduler-appointment-popup)
+    .dx-dialog
+    .dx-popup-bottom.dx-toolbar
+    .dx-toolbar-items-container {
+    height: auto;
+  }
+
+  .dx-popup:not(.dx-scheduler-appointment-popup)
+    .dx-dialog
+    .dx-toolbar-items-container
+    .dx-toolbar-center {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dx-popup:not(.dx-scheduler-appointment-popup)
+    .dx-dialog
+    .dx-toolbar-items-container
+    .dx-toolbar-center
+    .dx-toolbar-button {
+    padding: 0;
+  }
+  .dx-popup:not(.dx-scheduler-appointment-popup)
+    .dx-dialog
+    .dx-toolbar-items-container
+    .dx-toolbar-center
+    .dx-toolbar-button
+    .dx-button {
+    width: 200px;
+  }
+  .dx-popup:not(.dx-scheduler-appointment-popup)
+    .dx-dialog
+    .dx-toolbar-items-container
+    .dx-toolbar-center
+    .dx-toolbar-button:nth-child(1) {
+    margin-bottom: 12px;
+  }
+}
+.dx-widget{
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", "YuGothic", "游ゴシック体", "Arial", "Noto Sans CJK", "ヒラギノ角ゴ ProN", sans-serif;;
+  font-size: 16px;
+}
+.dx-treelist-content .dx-treelist-table .dx-row > td{
+  vertical-align: inherit;
+  /* text-align: center !important; */
+  text-align: center;
+}
+
+.customGanttTitleColumn .dx-button-mode-contained{
+  background-color: unset !important;
+  border-color: unset !important;
+  color: #ccc;
+}
+
+.customGanttTitleColumn .dx-button{
+  border-radius: unset;
+  border-width: unset;
+  border-style: unset;
+  display: inline-flex !important;
+  justify-items: center;
+  justify-content: center;
+}
+
+.dx-gantt-header .dx-gantt-tsac div{
+  height: 32px !important;
+}
+.dx-gantt-header .dx-gantt-tsac .dx-gantt-tsa:first-child{
+  @apply font-bold text-[#000000];
+}
+.dx-gantt .dx-gantt-milestone{
+  margin-left: 2px;
+}
+.dx-gantt{
+  border: unset !important;
+}
+.dx-gantt-tsac{
+  height: 64px !important;
+}
+.dx-gantt .dx-header-row{
+  height: 64px !important;
+}
+
+.dx-gantt .dx-gantt-altRow, .dx-gantt .dx-gantt-collapsable-row{
+  background-color: unset;
+ /* @apply hover:bg-blue-400*/
+}
+/*.dx-row.dx-data-row.dx-row-lines.dx-column-lines:hover{
+  @apply bg-blue-400;
+} */
+.dx-scrollable-content{
+  /* transform: translate(0px, -3.29px) !important; */
+}
+/* Tooltips for Subject Column in Gantt START */
+.customGanttTitleColumn .dx-treelist-text-content {
+  overflow: visible !important;
+}
+.customGanttTitleColumn .dx-treelist-cell-expandable {
+  overflow: visible !important;
+}
+div[data-tooltip].dxc-tooltip {
+  position: relative;
+}
+div[data-tooltip].dxc-tooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 2em;
+  left: 10%;
+  font-size: 0.9em;
+  padding: 1px 5px;
+  display: none;
+  color: white;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  transition: opacity 0.1s ease-out;
+  z-index: 9999; 
+  text-align: left;
+  opacity: 1;
+}
+
+div[data-tooltip]:hover::before {
+  display: inline-block;
+}
+.dx-gantt-task-edit-wrapper.hide-dependency.milestone .dx-gantt-task-edit-frame{
+  /* Diamond shape add pointer */
+  cursor: pointer;
+}
+/* Tooltips for Subject Column in Gantt END */
+
+.dx-gantt .dx-treelist .dx-treelist-rowsview .dx-selection.dx-row > td,
+.dx-gantt .dx-treelist .dx-treelist-rowsview .dx-selection.dx-row > tr > td,
+.dx-gantt .dx-treelist .dx-treelist-rowsview .dx-selection.dx-row:hover > td,
+.dx-gantt .dx-treelist .dx-treelist-rowsview .dx-selection.dx-row:hover > tr > td,
+.dx-gantt .dx-gantt-sel
+{
+  background-color: #EAF1F5;
+  @apply text-blue-100;
+}
+.dx-widget.dx-visibility-change-handler.dx-gantt{
+  height: calc(100vh - 174px) !important;
+}
+.dx-treelist-rowsview tr:not(.dx-row-focused) .dx-treelist-empty-space{
+  @apply text-blue-100;
+}
+/*.dx-gantt .dx-gantt-header .dx-gantt-hb, .dx-gantt
+.dx-gantt-header .dx-gantt-tsa, .dx-gantt .dx-gantt-header
+.dx-gantt-tsac, .dx-gantt .dx-gantt-header .dx-gantt-vb {
+  border-color: blue;
+}*/
+.dx-button-mode-contained .dx-icon{
+  @apply text-blue-100
+}
+
+.dx-treelist .dx-column-lines > td {
+  border-left: 0.5px dashed #5e8eb2;
+  border-right: 0.5px dashed #5e8eb2;
+}
+.dx-treelist-table.dx-treelist-table-fixed td:nth-child(1){
+  border-right: 1px solid #5E8EB2!important;
+}
+.dx-gantt .dx-gantt-vb {
+  border-left: 0.5px dashed #5e8eb2;
+}
+.dx-gantt .dx-gantt-hb {
+  margin-top: -1px;
+  border-top: 1px solid #bbcfdf; /* Right-side-table Row bottom border for line-match*/
+  /* border-top: 0.5px solid #5e8eb2; */
+}
+.dx-gantt .dx-gantt-tsa, .dx-gantt .dx-gantt-tsac {
+  border-bottom:  1px solid #5e8eb2!important;
+}
+
+.dx-gantt .dx-gantt-header .dx-gantt-hb, .dx-gantt .dx-gantt-header .dx-gantt-tsa, .dx-gantt .dx-gantt-header .dx-gantt-tsac, .dx-gantt .dx-gantt-header .dx-gantt-vb{
+  border-color:  #5e8eb2 !important;
+}
+.dx-treelist .dx-row-lines > td {
+  border-bottom:  1px solid #bbcfdf!important; /* Left-side-table Row bottom border for line-match*/
+  /* border-bottom:  0.5px solid #5e8eb2!important; */
+}
+.dx-splitter.dx-splitter-inactive {
+  background-color: #5e8eb2 !important;
+}
+.dx-gantt .dx-splitter-wrapper .dx-splitter-border .dx-splitter{
+  width: 1px;
+}
+.dx-treelist-headers .dx-treelist-table .dx-row > td {
+  border-bottom:  1px solid #5e8eb2 !important;
+}
+
+.dx-gantt .dx-gantt-view .dx-gantt-tac-hb {
+   margin-top: 0 !important;   /*Remove margin-top for line-match tasks*/
+}
+/*.dx-gantt .dx-treelist-rowsview .dx-selection.dx-row > td{
+  @apply text-blue-100;
+}*/
+.dx-gantt .dx-treelist-rowsview .dx-selection.dx-row.dx-column-lines > td {
+  border-right-color: #5e8eb2 !important;
+}
+.dx-treelist .dx-row > td,
+.dx-treelist .dx-row > tr > td {
+  height: 32px;
+}
+.dx-treelist-rowsview .dx-row{
+  border-bottom: none;
+  border-top: none;
+  height: 40px !important;   /* Added Left-side-Table Row Height for line-match  */
+}
+
+/*.dx-treelist .dx-row-lines:nth-last-child(2) > td{
+  border-bottom: none !important; !*Left-side-table -- Remove last row border-bottom for line-match*!
+}*/
+
+  /*
+  new css adding 29th sept
+  */
+.dx-treelist-headers .dx-treelist-content{
+  margin-bottom : -0.7px !important;
+}
+/*.dx-scrollable-scroll .dx-state-invisible{
+  transform: none !important;
+  translate: none !important;
+}*/
+.dx-treelist-rowsview .dx-scrollable-wrapper .dx-scrollable-container::-webkit-scrollbar {
+  display: none;
+/*  transition: opacity 0s linear 0.1s !important;
+  scroll-behavior: unset !important;
+  transform: translate(0 , 0.33%) !important;*/
+}
+
+.dx-treelist-rowsview .dx-row {
+  border-bottom: 1px solid #bbcfdf !important;
+  border-top: none !important;
+  padding-bottom: 6px !important;
+}
+.dx-scrollable-container {
+  overflow: overlay !important;
+}
+.dx-scrollable-container {
+  overflow: overlay !important;
+}
+.dx-scrollable-container::-webkit-scrollbar {
+  /* width: 6px !important;
+  height: 6px !important; */
+  overflow: overlay !important;
+}
+.dx-scrollable-container::-webkit-scrollbar-corner {
+  opacity: 0;
+}
+.dx-scrollable-scroll-content{
+  /* Remove default scrollbar from grant chat right side table */
+  background-color: transparent; 
+}
+/*.dx-gantt .dx-gantt-treelist-wrapper .dx-treelist .dx-treelist-headers + .dx-treelist-rowsview{
+  margin-bottom: 6px !important;
+}*/
+/*.dx-treelist-borders .dx-treelist-headers .dx-treelist-table {
+  border-bottom-width: unset !important;
+}*/
+.dx-gantt-taskTitle .dx-gantt-titleIn{
+  z-index: -1 !important;
+}
+/* ------------ Gantt Chart END -------------- */
+
+/* ------------   HIERARCHICAL DATA TABLE START -------------- */
+.hierarchicalDataTable .dx-treelist-headers .dx-treelist-table .dx-row > td{
+  border-bottom: 1.5px solid #145c8f !important;
+  border-top: 1px solid #145c8f !important;
+}
+.hierarchicalDataTable .dx-treelist-borders > .dx-treelist-rowsview{
+  border: unset !important;
+}
+.hierarchicalDataTable .dx-header-row{
+  @apply bg-blue-50 text-white font-bold;
+}
+.hierarchicalDataTable .dx-header-row td{
+  text-align: center !important;
+}
+/*.hierarchicalDataTable .dx-treelist-rowsview .dx-row {
+  @apply font-normal odd:bg-codd even:bg-ceven hover:odd:bg-coddhover hover:even:bg-cevenhover;
+}*/
+/* ------------   HIERARCHICAL DATA TABLE END -------------- */
+
+/* ------------ 16 Months Calendar STARTS -------------- */
+
+.calendar-upper .dx-button-mode-contained {
+  background-color: transparent;
+  border: 0px;
+}
+
+.dx-scheduler-container {
+  background: transparent !important;
+}
+.dx-scheduler-work-space {
+  border: none !important;
+  background: transparent !important;
+}
+.dx-scheduler-header-panel {
+  display: none !important;
+}
+.dx-toolbar-after{
+    display: none !important;
+} 
+.dx-toolbar-items-container > 
+.dx-toolbar-after{
+  display: block !important;
+}/* For AppointmentPopUpModal Footer Button display: true*/
+.dx-scheduler-header{
+    border: none !important;
+}
+.dx-scheduler-header {
+    background: transparent;
+  display: none !important;
+}
+
+.dx-scheduler-date-table-cell {
+  /* height: 50px; */
+  height: 24px !important;
+}
+
+.dx-scheduler-all-day-appointments, .dx-scheduler-scrollable-appointments{
+  top:24px !important;
+}
+.dx-scheduler-date-table-other-month {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cdx-DateBox .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input{
+  @apply text-blue-100
+}
+
+.dx-field-value > .dx-texteditor.dx-editor-outlined{
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0px !important;
+  border-bottom: 2px solid #145c8f !important;
+}
+.cdx-field-value-ml{
+  margin-left: 110px !important;
+}
+
+/* ------------ 16 Months Calendar END -------------- */
+
+/* ------------ Filter Builder START -------------- */
+.dx-filterBuilder-results {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dx-filterBuilder-results > div {
+  flex-basis: 49%;
+  max-width: 50%;
+  background-color: rgba(191, 191, 191, 0.15);
+  position: relative;
+}
+.dx-filterBuilder-results b {
+  position: absolute;
+  top: -25px;
+}
+.dx-filterBuilder-results pre {
+  padding: 10px 20px;
+  height: 100%;
+  font-size: 13px;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.dx-tagbox {
+  min-width: 150px;
+}
+
+.dx-filterbuilder .dx-numberbox {
+  width: 80px;
+}
+.dx-filterbuilder .dx-filterbuilder-text{
+  border-radius: unset;
+  @apply border border-solid border-blue-100
+}
+.dx-filterbuilder .dx-filterbuilder-group .dx-filterbuilder-text.dx-filterbuilder-group-operation{
+  color: white;
+  @apply bg-[rgb(255,75,0,0.7)] hover:bg-[rgb(255,75,0,0.5)]
+}
+.dx-filterbuilder .dx-filterbuilder-group .dx-filterbuilder-text.dx-filterbuilder-item-field{
+  color: #FFF;
+  @apply bg-[rgb(20,92,143,0.7)] hover:bg-[rgb(20,92,143,0.5)]
+}
+.dx-filterbuilder .dx-filterbuilder-group .dx-filterbuilder-text.dx-filterbuilder-item-operation{
+  color: #FFF;
+  @apply bg-[rgb(25,167,93,0.7)] hover:bg-[rgb(25,167,93,0.5)]
+}
+.dx-filterbuilder .dx-filterbuilder-group .dx-icon-remove{
+  @apply text-[rgb(255,75,0,0.5)] hover:text-[rgb(255,75,0,0.7)]
+}
+.dx-filterbuilder .dx-filterbuilder-group .dx-icon-plus{
+  @apply text-[rgb(25,167,93,0.5)] hover:text-[rgb(25,167,93,0.7)]
+}
+
+
+/*drag app styles starts*/
+
+.dx-field-value:not(.dx-switch):not(.dx-checkbox):not(.dx-button){
+  width: 100% !important;
+}
+.dx-field-value > .dx-texteditor.dx-editor-outlined {
+  border-bottom: unset !important;
+}
+.dx-tag-custom  .dx-tag-content{
+  height: 32px !important;
+  border-radius: unset !important;
+  @apply bg-white outline-none border border-solid border-blue-100 text-blue-100
+}
+.dx-tag-custom>div>div> .dx-texteditor-input-container {
+  background-image: url(/src/img/Polygon9.svg);
+  background-repeat: no-repeat;
+  background-position-x: 99.4%;
+  background-position-y: 50%;
+}
+.dx-tag-custom .dx-tag-remove-button::after, .dx-tag-custom .dx-tag-remove-button::before {
+  @apply bg-blue-100
+}
+.dx-texteditor.dx-editor-outlined {
+  border-radius: unset !important;
+  @apply border outline-none border-solid border-blue-100 bg-blue-25
+
+}
+/*
+select {
+  text-align: center;
+  text-align-last: center;
+  !* webkit*!
+}
+option {
+  text-align: left;
+  !* reset to left*!
+}
+*/
+
+/*drag app styles ends*/
+
+ /* treeview styles Starts*/
+  .customClass .dx-item.dx-treeview-item {
+     @apply bg-blue-25 mb-2 border border-solid border-blue-100
+   }
+ /* treeview styles ENDS*/
+
+/* ------------ Filter Builder END -------------- */
+/* ------------ DataGrid START -------------- */
+#customerFieldSettingDataGrid > .dx-datagrid,
+#systemFieldSettingDataGrid > .dx-datagrid
+{
+  width: 1376px;
+}
+
+#customerFieldSettingDataGrid > .dx-datagrid > .dx-datagrid-headers,
+#systemFieldSettingDataGrid > .dx-datagrid > .dx-datagrid-headers{
+  background-color: #8AADC6 !important;
+  color: #ffffff;
+}
+
+#customerFieldSettingDataGrid > .dx-datagrid .dx-datagrid-headers .dx-datagrid-table .dx-row > td,
+#systemFieldSettingDataGrid > .dx-datagrid .dx-datagrid-headers .dx-datagrid-table .dx-row > td
+{
+  text-align: center !important;
+}
+
+#customerFieldSettingDataGrid > .dx-datagrid > .dx-datagrid-rowsview > .dx-datagrid-content .dx-datagrid-table .dx-row > td,
+#systemFieldSettingDataGrid > .dx-datagrid > .dx-datagrid-rowsview > .dx-datagrid-content .dx-datagrid-table .dx-row > td
+{
+  @apply text-blue-100
+}
+
+/*.custom-selectbox-class >div>div>div>div> .dx-button-content .dx-dropdowneditor-icon{
+  display: none;
+}*/
+/* ------------ DataGrid END -------------- */
+
+.dx-item-content, .dx-treeview-item-content {
+  margin-left: 10px;
+}
+
+
+
+/* datebox styles */
+.dx-datebox-wrapper .dx-overlay-content .dx-toolbar > .dx-toolbar-items-container > .dx-toolbar-after {
+  display: flex !important;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+}
+
+.dx-timeview-field {
+  padding: 20px;
+}
+.dx-item-content .dx-box-item-content {
+  margin: 0;
+}
+
+/* Date Calendar START */
+#cdxDateBox .dx-texteditor-buttons-container>.dx-button {
+  border-width: 0px;
+  border-style: none;
+}
+
+#cdxDateBox .dx-texteditor-input{
+  cursor: text !important;
+}
+#cdxEventDateBox .dx-texteditor-buttons-container>.dx-button {
+  border-width: 0px;
+  border-style: none;
+}
+
+#cdxEventDateBox .dx-texteditor-input{
+  cursor: text !important;
+}
+/* Date Calendar END */

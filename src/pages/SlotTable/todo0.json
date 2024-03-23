@@ -1,0 +1,602 @@
+// e.component.getVisibleColumns(0);
+[
+    {
+        "headerId": "dx-col-208", //important
+        "visible": true,
+        "showInColumnChooser": true,
+        "allowFixing": true,
+        "allowReordering": false,
+        "autoExpandGroup": true,
+        "allowCollapsing": true,
+        "allowGrouping": true,
+        "allowFiltering": true,
+        "allowHiding": true,
+        "allowSorting": false,
+        "allowEditing": false,
+        "encodeHtml": true,
+        "trueText": "true",
+        "falseText": "false",
+        "allowExporting": true,
+        "caption": "開催時間",
+        "resizedCallbacks": {
+            "_options": {},
+            "_list": [],
+            "_queue": [],
+            "_firing": false,
+            "_fired": true,
+            "_firingIndexes": []
+        },
+        "format": {
+            "type": "fixedPoint"
+        },
+        "fixed": true,
+        "itemid": 1000,
+        "dataField": "Country", //important
+        "width": 92,
+        "name": "Country",
+        "filterOperations": [
+            "contains",
+            "notcontains",
+            "startswith",
+            "endswith",
+            "=",
+            "<>"
+        ],
+        "index": 0,//important
+        "visibleIndex": 0,//important
+        "dataType": "string",
+        "alignment": "left",
+        "defaultFilterOperations": [
+            "contains",
+            "notcontains",
+            "startswith",
+            "endswith",
+            "=",
+            "<>"
+        ],
+        "defaultFilterOperation": "contains",
+        "showEditorAlways": false,
+        "bestFitWidth": 92,
+        "visibleWidth": 92,
+        "rowspan": 3
+    },
+    {
+        "headerId": "dx-col-209", //important
+        "visible": true,
+        "showInColumnChooser": true,
+        "allowFixing": true,
+        "allowReordering": false,
+        "autoExpandGroup": true,
+        "allowCollapsing": true,
+        "allowGrouping": false,
+        "allowFiltering": false,
+        "allowHiding": true,
+        "allowSorting": false,
+        "allowEditing": true,
+        "encodeHtml": true,
+        "trueText": "true",
+        "falseText": "false",
+        "allowExporting": true,
+        "isBand": true,
+        "resizedCallbacks": {
+            "_options": {},
+            "_list": [],
+            "_queue": [],
+            "_firing": false,
+            "_fired": false,
+            "_firingIndexes": []
+        },
+        "itemid": 1001,
+        "caption": "施設上限",
+        "fixed": true,
+        "format": "string",
+        "hasColumns": true,
+        "index": 1,//important
+        "visibleIndex": 1,//important
+        "colspan": 2
+    },
+    {
+        "headerId": "dx-col-216", //important
+        "visible": true,
+        "showInColumnChooser": true,
+        "allowFixing": true,
+        "allowReordering": true,
+        "autoExpandGroup": true,
+        "allowCollapsing": true,
+        "allowGrouping": false,
+        "allowFiltering": false,
+        "allowHiding": true,
+        "allowSorting": false,
+        "allowEditing": true,
+        "encodeHtml": true,
+        "trueText": "true",
+        "falseText": "false",
+        "allowExporting": true,
+        "isBand": true,
+        "resizedCallbacks": {
+            "_options": {},
+            "_list": [],
+            "_queue": [],
+            "_firing": false,
+            "_fired": false,
+            "_firingIndexes": []
+        },
+        "caption": "",
+        "format": "string",
+        "itemid": 2002,
+        "imranSpComment": "I love you💕",
+        "now": "2022/9/8 14:08:15",
+        "hasColumns": true,
+        "index": 8,//important
+        "visibleIndex": 2,//important
+        "colspan": 2
+    },
+    {
+        "headerId": "dx-col-212", //important
+        "visible": true,
+        "showInColumnChooser": true,
+        "allowFixing": true,
+        "allowReordering": true,
+        "autoExpandGroup": true,
+        "allowCollapsing": true,
+        "allowGrouping": false,
+        "allowFiltering": false,
+        "allowHiding": true,
+        "allowSorting": false,
+        "allowEditing": true,
+        "encodeHtml": true,
+        "trueText": "true",
+        "falseText": "false",
+        "allowExporting": true,
+        "isBand": true,
+        "resizedCallbacks": {
+            "_options": {},
+            "_list": [],
+            "_queue": [],
+            "_firing": false,
+            "_fired": false,
+            "_firingIndexes": []
+        },
+        "caption": "",
+        "format": "string",
+        "itemid": 2002,
+        "imranSpComment": "I love you💕",
+        "now": "2022/9/8 14:08:15",
+        "hasColumns": true,
+        "index": 4,//important
+        "visibleIndex": 3,//important
+        "colspan": 2
+    },
+    {
+        "headerId": "dx-col-220", //important
+        "visible": true,
+        "showInColumnChooser": true,
+        "allowFixing": true,
+        "allowReordering": true,
+        "autoExpandGroup": true,
+        "allowCollapsing": true,
+        "allowGrouping": false,
+        "allowFiltering": false,
+        "allowHiding": true,
+        "allowSorting": false,
+        "allowEditing": true,
+        "encodeHtml": true,
+        "trueText": "true",
+        "falseText": "false",
+        "allowExporting": true,
+        "isBand": true,
+        "resizedCallbacks": {
+            "_options": {},
+            "_list": [],
+            "_queue": [],
+            "_firing": false,
+            "_fired": false,
+            "_firingIndexes": []
+        },
+        "caption": "",
+        "format": "string",
+        "itemid": 2002,
+        "imranSpComment": "I love you💕",
+        "now": "2022/9/8 14:08:15",
+        "hasColumns": true,
+        "index": 12,//important
+        "visibleIndex": 4,//important
+        "colspan": 2
+    },
+    {
+        "headerId": "dx-col-224", //important
+        "visible": true,
+        "showInColumnChooser": true,
+        "allowFixing": true,
+        "allowReordering": true,
+        "autoExpandGroup": true,
+        "allowCollapsing": true,
+        "allowGrouping": false,
+        "allowFiltering": false,
+        "allowHiding": true,
+        "allowSorting": false,
+        "allowEditing": true,
+        "encodeHtml": true,
+        "trueText": "true",
+        "falseText": "false",
+        "allowExporting": true,
+        "isBand": true,
+        "resizedCallbacks": {
+            "_options": {},
+            "_list": [],
+            "_queue": [],
+            "_firing": false,
+            "_fired": false,
+            "_firingIndexes": []
+        },
+        "caption": "",
+        "format": "string",
+        "itemid": 2002,
+        "imranSpComment": "I love you💕",
+        "now": "2022/9/8 14:08:15",
+        "hasColumns": true,
+        "index": 16,//important
+        "visibleIndex": 5,//important
+        "colspan": 2
+    },
+    {
+        "headerId": "dx-col-228", //important
+        "visible": true,
+        "showInColumnChooser": true,
+        "allowFixing": true,
+        "allowReordering": true,
+        "autoExpandGroup": true,
+        "allowCollapsing": true,
+        "allowGrouping": false,
+        "allowFiltering": false,
+        "allowHiding": true,
+        "allowSorting": false,
+        "allowEditing": true,
+        "encodeHtml": true,
+        "trueText": "true",
+        "falseText": "false",
+        "allowExporting": true,
+        "isBand": true,
+        "resizedCallbacks": {
+            "_options": {},
+            "_list": [],
+            "_queue": [],
+            "_firing": false,
+            "_fired": false,
+            "_firingIndexes": []
+        },
+        "caption": "🔗",
+        "format": "string",
+        "itemid": 2002,
+        "imranSpComment": "I love you💕",
+        "now": "2022/9/8 14:08:15",
+        "hasColumns": true,
+        "index": 20,//important
+        "visibleIndex": 6,//important
+        "colspan": 6
+    },
+    {
+        "headerId": "dx-col-238", //important
+        "visible": true,
+        "showInColumnChooser": true,
+        "allowFixing": true,
+        "allowReordering": true,
+        "autoExpandGroup": true,
+        "allowCollapsing": true,
+        "allowGrouping": false,
+        "allowFiltering": false,
+        "allowHiding": true,
+        "allowSorting": false,
+        "allowEditing": true,
+        "encodeHtml": true,
+        "trueText": "true",
+        "falseText": "false",
+        "allowExporting": true,
+        "isBand": true,
+        "resizedCallbacks": {
+            "_options": {},
+            "_list": [],
+            "_queue": [],
+            "_firing": false,
+            "_fired": false,
+            "_firingIndexes": []
+        },
+        "caption": "",
+        "format": "string",
+        "itemid": 2002,
+        "imranSpComment": "I love you💕",
+        "now": "2022/9/8 14:08:15",
+        "hasColumns": true,
+        "index": 30,//important
+        "visibleIndex": 7,//important
+        "colspan": 2
+    },
+    {
+        "headerId": "dx-col-242", //important
+        "visible": true,
+        "showInColumnChooser": true,
+        "allowFixing": true,
+        "allowReordering": true,
+        "autoExpandGroup": true,
+        "allowCollapsing": true,
+        "allowGrouping": false,
+        "allowFiltering": false,
+        "allowHiding": true,
+        "allowSorting": false,
+        "allowEditing": true,
+        "encodeHtml": true,
+        "trueText": "true",
+        "falseText": "false",
+        "allowExporting": true,
+        "isBand": true,
+        "resizedCallbacks": {
+            "_options": {},
+            "_list": [],
+            "_queue": [],
+            "_firing": false,
+            "_fired": false,
+            "_firingIndexes": []
+        },
+        "caption": "",
+        "format": "string",
+        "itemid": 2002,
+        "imranSpComment": "I love you💕",
+        "now": "2022/9/8 14:08:15",
+        "hasColumns": true,
+        "index": 34,//important
+        "visibleIndex": 8,//important
+        "colspan": 2
+    },
+    {
+        "headerId": "dx-col-246", //important
+        "visible": true,
+        "showInColumnChooser": true,
+        "allowFixing": true,
+        "allowReordering": true,
+        "autoExpandGroup": true,
+        "allowCollapsing": true,
+        "allowGrouping": false,
+        "allowFiltering": false,
+        "allowHiding": true,
+        "allowSorting": false,
+        "allowEditing": true,
+        "encodeHtml": true,
+        "trueText": "true",
+        "falseText": "false",
+        "allowExporting": true,
+        "isBand": true,
+        "resizedCallbacks": {
+            "_options": {},
+            "_list": [],
+            "_queue": [],
+            "_firing": false,
+            "_fired": false,
+            "_firingIndexes": []
+        },
+        "caption": "",
+        "format": "string",
+        "itemid": 2002,
+        "imranSpComment": "I love you💕",
+        "now": "2022/9/8 14:08:15",
+        "hasColumns": true,
+        "index": 38,//important
+        "visibleIndex": 9,//important
+        "colspan": 2
+    },
+    {
+        "headerId": "dx-col-250", //important
+        "visible": true,
+        "showInColumnChooser": true,
+        "allowFixing": true,
+        "allowReordering": true,
+        "autoExpandGroup": true,
+        "allowCollapsing": true,
+        "allowGrouping": false,
+        "allowFiltering": false,
+        "allowHiding": true,
+        "allowSorting": false,
+        "allowEditing": true,
+        "encodeHtml": true,
+        "trueText": "true",
+        "falseText": "false",
+        "allowExporting": true,
+        "isBand": true,
+        "resizedCallbacks": {
+            "_options": {},
+            "_list": [],
+            "_queue": [],
+            "_firing": false,
+            "_fired": false,
+            "_firingIndexes": []
+        },
+        "caption": "",
+        "format": "string",
+        "itemid": 2002,
+        "imranSpComment": "I love you💕",
+        "now": "2022/9/8 14:08:15",
+        "hasColumns": true,
+        "index": 42,//important
+        "visibleIndex": 10,//important
+        "colspan": 2
+    },
+    {
+        "headerId": "dx-col-254", //important
+        "visible": true,
+        "showInColumnChooser": true,
+        "allowFixing": true,
+        "allowReordering": true,
+        "autoExpandGroup": true,
+        "allowCollapsing": true,
+        "allowGrouping": false,
+        "allowFiltering": false,
+        "allowHiding": true,
+        "allowSorting": false,
+        "allowEditing": true,
+        "encodeHtml": true,
+        "trueText": "true",
+        "falseText": "false",
+        "allowExporting": true,
+        "isBand": true,
+        "resizedCallbacks": {
+            "_options": {},
+            "_list": [],
+            "_queue": [],
+            "_firing": false,
+            "_fired": false,
+            "_firingIndexes": []
+        },
+        "caption": "",
+        "format": "string",
+        "itemid": 2002,
+        "imranSpComment": "I love you💕",
+        "now": "2022/9/8 14:08:15",
+        "hasColumns": true,
+        "index": 46,//important
+        "visibleIndex": 11,//important
+        "colspan": 2
+    },
+    {
+        "headerId": "dx-col-258", //important
+        "visible": true,
+        "showInColumnChooser": true,
+        "allowFixing": true,
+        "allowReordering": true,
+        "autoExpandGroup": true,
+        "allowCollapsing": true,
+        "allowGrouping": false,
+        "allowFiltering": false,
+        "allowHiding": true,
+        "allowSorting": false,
+        "allowEditing": true,
+        "encodeHtml": true,
+        "trueText": "true",
+        "falseText": "false",
+        "allowExporting": true,
+        "isBand": true,
+        "resizedCallbacks": {
+            "_options": {},
+            "_list": [],
+            "_queue": [],
+            "_firing": false,
+            "_fired": false,
+            "_firingIndexes": []
+        },
+        "caption": "",
+        "format": "string",
+        "itemid": 2002,
+        "imranSpComment": "I love you💕",
+        "now": "2022/9/8 14:08:15",
+        "hasColumns": true,
+        "index": 50,//important
+        "visibleIndex": 12,//important
+        "colspan": 2
+    },
+    {
+        "headerId": "dx-col-262", //important
+        "visible": true,
+        "showInColumnChooser": true,
+        "allowFixing": true,
+        "allowReordering": true,
+        "autoExpandGroup": true,
+        "allowCollapsing": true,
+        "allowGrouping": false,
+        "allowFiltering": false,
+        "allowHiding": true,
+        "allowSorting": false,
+        "allowEditing": true,
+        "encodeHtml": true,
+        "trueText": "true",
+        "falseText": "false",
+        "allowExporting": true,
+        "isBand": true,
+        "resizedCallbacks": {
+            "_options": {},
+            "_list": [],
+            "_queue": [],
+            "_firing": false,
+            "_fired": false,
+            "_firingIndexes": []
+        },
+        "caption": "",
+        "format": "string",
+        "itemid": 2002,
+        "imranSpComment": "I love you💕",
+        "now": "2022/9/8 14:08:15",
+        "hasColumns": true,
+        "index": 54,//important
+        "visibleIndex": 13,//important
+        "colspan": 2
+    },
+    {
+        "headerId": "dx-col-266", //important
+        "visible": true,
+        "showInColumnChooser": true,
+        "allowFixing": true,
+        "allowReordering": true,
+        "autoExpandGroup": true,
+        "allowCollapsing": true,
+        "allowGrouping": false,
+        "allowFiltering": false,
+        "allowHiding": true,
+        "allowSorting": false,
+        "allowEditing": true,
+        "encodeHtml": true,
+        "trueText": "true",
+        "falseText": "false",
+        "allowExporting": true,
+        "isBand": true,
+        "resizedCallbacks": {
+            "_options": {},
+            "_list": [],
+            "_queue": [],
+            "_firing": false,
+            "_fired": false,
+            "_firingIndexes": []
+        },
+        "caption": "",
+        "format": "string",
+        "itemid": 2002,
+        "imranSpComment": "I love you💕",
+        "now": "2022/9/8 14:08:15",
+        "hasColumns": true,
+        "index": 58,//important
+        "visibleIndex": 14,//important
+        "colspan": 2
+    },
+    {
+        "headerId": "dx-col-270", //important
+        "visible": true,
+        "showInColumnChooser": true,
+        "allowFixing": true,
+        "allowReordering": true,
+        "autoExpandGroup": true,
+        "allowCollapsing": true,
+        "allowGrouping": false,
+        "allowFiltering": false,
+        "allowHiding": true,
+        "allowSorting": false,
+        "allowEditing": true,
+        "encodeHtml": true,
+        "trueText": "true",
+        "falseText": "false",
+        "allowExporting": true,
+        "isBand": true,
+        "resizedCallbacks": {
+            "_options": {},
+            "_list": [],
+            "_queue": [],
+            "_firing": false,
+            "_fired": false,
+            "_firingIndexes": []
+        },
+        "caption": "🔗",
+        "format": "string",
+        "itemid": 2002,
+        "imranSpComment": "I love you💕",
+        "now": "2022/9/8 14:08:15",
+        "hasColumns": true,
+        "index": 62,//important
+        "visibleIndex": 15,//important
+        "colspan": 4
+    }
+]

@@ -1,0 +1,69 @@
+.slot_table_modal_page {
+    /* min-width: initial !important; */
+    /* max-width: 1440px; */
+    max-width: 100%;
+    /* TODO provisional solution */
+    min-width: 100%;
+}
+.columnHeader {
+    position: relative;
+    overflow: visible !important; 
+}
+.dx-datagrid-borders > .dx-datagrid-filter-panel, .dx-datagrid-borders > .dx-datagrid-headers {
+    @apply text-blue-100
+}
+.dx-datagrid-content .dx-datagrid-table .dx-row  td:first-child {
+    @apply text-blue-100
+}
+.dx-datagrid .dx-row-alt > td, .dx-datagrid .dx-row-alt > tr > td {
+    border-top: unset !important;
+    border-bottom: unset !important;
+    background-color: unset!important;
+}
+.slot-modal-wrapper .dx-datagrid .dx-column-lines > td {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+.slot-modal-wrapper .dx-datagrid-borders > .dx-datagrid-rowsview{
+    @apply border-[1px] border-cDarkBlue
+}
+.slot-modal-wrapper .dx-datagrid-borders > .dx-datagrid-headers{
+    @apply border border-cDarkBlue
+}
+.slot-modal-wrapper .dx-datagrid-headers{
+    border-bottom: unset !important;
+}
+.slot-modal-wrapper .dx-datagrid-headers .dx-datagrid-table .dx-row > td{
+    border-bottom: 1px solid #000;
+}
+.slot-modal-wrapper tr:hover {
+    background-color: #9AD2FD !important;
+}
+.dx-datagrid-action, .dx-datagrid-drag-action{
+    cursor: ew-resize !important;
+}
+.event_slot_modal_btn button {
+    max-width: 350px;
+}
+.slot-modal-wrapper tr td:first-child {
+    border-right: 2px solid #000 !important;
+}
+.slot-modal-wrapper .childHeader {
+    background-color: #145c81;
+}
+.slot-modal-wrapper .childHeader.facility-header {
+    background-color: #0facf3;
+}
+.slot-modal-wrapper .dx-datagrid-headers tbody .grandChildHeaderClass {
+    color: #fff !important;
+}
+.slot-modal-wrapper .dx-datagrid-headers tbody .grandChildHeaderClass[aria-label='列 予約'] {
+    background-color: #145c81;
+}
+.slot-modal-wrapper .dx-datagrid-headers tbody .grandChildHeaderClass[aria-label='列 残数'] {
+    background-color: #ff5722;
+}
+.slot-modal-wrapper .dx-datagrid-headers tbody .grandChildHeaderClass[aria-label='列 最大'] {
+    background-color: #55b776;
+}
+

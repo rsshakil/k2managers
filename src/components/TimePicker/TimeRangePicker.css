@@ -1,0 +1,15 @@
+.rc-time-picker-panel-combobox {
+    display: flex;
+}
+.rc-time-picker-input {
+    border-radius: unset;
+    font-size: 16px;
+    @apply w-[122px] h-[2rem];
+}
+.rc-time-picker-panel-inner{
+    border-radius: unset;
+    font-size: 16px;
+}
+.rc-time-picker input {
+    @apply border border-black;
+}

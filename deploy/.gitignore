@@ -1,0 +1,4 @@
+deploy-fargate-develop.json
+deploy-fargate-staging.json
+deploy-fargate-product.json
+deploy-fargate-production.json

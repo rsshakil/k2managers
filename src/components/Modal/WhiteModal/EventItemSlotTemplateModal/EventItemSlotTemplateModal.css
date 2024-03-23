@@ -1,0 +1,94 @@
+.slot_table_modal_page {
+    /* min-width: initial !important; */
+    max-width: 1440px;
+}
+.columnHeader {
+    position: relative;
+    overflow: visible !important; 
+}
+.slot_table_modal_page .dx-cell-modified.dx-cell-modified::after {
+    border-color: #145c8f !important;
+}
+.slot_table_modal_page .dx-cell-modified.dx-cell-modified.error-show, .slot_table_modal_page .grandChildHeaderClass.error-show {
+    background: #F19671 !important;
+}
+.dx-datagrid-borders > .dx-datagrid-filter-panel, .dx-datagrid-borders > .dx-datagrid-headers {
+    @apply text-blue-100
+}
+.dx-datagrid-content .dx-datagrid-table .dx-row  td:first-child {
+    @apply text-blue-100
+}
+.dx-datagrid .dx-row-alt > td, .dx-datagrid .dx-row-alt > tr > td {
+    border-top: unset !important;
+    border-bottom: unset !important;
+    background-color: unset!important;
+}
+.dx-datagrid .dx-column-lines > td {
+    border-left: 1px solid #145c8f;
+    border-right: 1px solid #145c8f;
+}
+.dx-datagrid-borders > .dx-datagrid-rowsview{
+    @apply border-[1px] border-cDarkBlue
+}
+.dx-datagrid-borders > .dx-datagrid-headers{
+    @apply border border-cDarkBlue
+}
+.dx-datagrid-headers{
+    border-bottom: unset !important;
+}
+.dx-datagrid-headers .dx-datagrid-table .dx-row > td{
+    border-bottom: 1px solid #145c8f;
+}
+.slotTableCustomClass .dx-datagrid-rowsview .dx-row>td, .dx-datagrid-rowsview .dx-row>tr>td{
+    @apply bg-codd hover:bg-coddhover;
+}
+.dx-datagrid-action, .dx-datagrid-drag-action{
+    cursor: ew-resize !important;
+}
+.slot_table_modal_page form .dx-visibility-change-handler {
+    margin: 0 auto;
+    width: 100%;
+}
+.childHeader , .childHeaderOther{
+    color: #FFFFFF;
+    text-align: center !important;
+    padding: 2px !important;
+    vertical-align: middle !important;
+    @apply bg-blue-50
+}
+.grandChildHeaderClass {
+    text-align: center !important;
+    @apply bg-blue-400
+}
+.childHeaderOther:first-child{
+    background-color: unset;
+}
+.childHeader .dx-datagrid-text-content, .childHeaderOther .dx-datagrid-text-content{
+    white-space: normal !important;
+    line-height: 14px;
+    font-size: 14px;
+}
+.slotTableCustomClass .dx-datagrid-nowrap, .slotTableCustomClass .dx-datagrid-nowrap .dx-header-row>td>.dx-datagrid-text-content {
+    white-space: normal !important;
+}
+.parentHeader {
+    text-align: center !important;
+}
+
+/*.slotTableCustomClass .dx-datagrid-headers {
+    padding-right: unset !important;
+}*/
+.slotTableCustomClass::-webkit-scrollbar{
+    height: 6px;
+    width: 6px;
+}
+
+.slotTableCustomClass .dx-scrollable-container {
+    overflow: overlay !important;
+}
+.slot_table_modal_page .dx-scrollable-wrapper tbody .grandChildHeaderClass {
+    text-align: right !important;
+}
+.slot-template-modal-wrapper .dx-datagrid-rowsview tr:hover td {
+    background-color: rgb(234,241,245) !important;
+}

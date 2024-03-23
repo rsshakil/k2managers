@@ -1,0 +1,52 @@
+.itemChildren{
+    background-color: unset !important;
+    width: 400px;
+    @apply text-blue-100 ml-8
+}
+.dx-treeview-item {
+    /* border: 5px solid black;
+    width: 100%; */
+    /* padding: 5px 0 !important; */
+}
+.dx-treeview-node{
+    /*padding-left: unset !important;*/
+}
+
+/* .dx-item.dx-treeview-item {
+    @apply bg-blue-25 mb-2 border border-solid border-blue-100
+} */
+
+.item-parent-child-relationship-setting > div > div > div > div > div > div > ul > li > .dx-item.dx-treeview-item {
+    @apply bg-blue-25 mb-2 border border-solid border-blue-100;
+    padding: 0.5rem 0;
+}
+
+.item-parent-child-relationship-setting > div > div > div > div > div > div > ul > li > ul > li > .dx-item.dx-treeview-item {
+    @apply bg-blue-25 mb-2 border border-solid border-blue-100;
+    padding: 0.5rem 0;
+}
+#treeviewDriveC .dx-treeview-toggle-item-visibility-opened {
+    font-size: 0px!important;
+}
+#treeviewDriveC .dx-scrollable-content > ul.dx-treeview-node-container {
+    margin-left: 0;
+}
+#treeviewDriveC .dx-scrollable-content > ul.dx-treeview-node-container li {
+    padding-left: 0;
+}
+#treeviewDriveC .dx-scrollable-content > ul > li {
+    width: 600px;
+}
+#treeviewDriveC ul.dx-treeview-node-container ul.dx-treeview-node-container {
+    width: 600px;
+    margin-left: 38px;
+}
+#treeviewDriveC .handle {
+    position: absolute;
+    left: 4px;
+    top: 7px;
+    font-size: 18px;
+    line-height: 19px;
+    cursor: move;
+    /* border: 2px solid yellow; */
+}
